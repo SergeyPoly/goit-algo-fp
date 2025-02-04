@@ -22,4 +22,4 @@ heap = [10, 20, 15, 30, 40, 50, 100]
 heap_tree_root = build_tree_from_heap(heap)
 
 # Візуалізація дерева
-draw_tree(heap_tree_root)
+draw_tree(heap_tree_root, "Візуалізація бінарної купи")

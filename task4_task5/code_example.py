@@ -27,7 +27,7 @@ def add_edges(graph, node, pos, x=0, y=0, layer=1):
   return graph
 
 
-def draw_tree(tree_root):
+def draw_tree(tree_root, title):
   tree = nx.DiGraph()
   pos = {tree_root.id: (0, 0)}
   tree = add_edges(tree, tree_root, pos)
@@ -36,6 +36,7 @@ def draw_tree(tree_root):
   labels = {node[0]: node[1]['label'] for node in tree.nodes(data=True)} # Використовуйте значення вузла для міток
 
   plt.figure(figsize=(8, 5))
+  plt.title(title)
   nx.draw(tree, pos=pos, labels=labels, arrows=False, node_size=2500, node_color=colors)
   plt.show()
 
@@ -50,4 +51,4 @@ if __name__ == "__main__":
   root.right.left = Node(3)
 
   # Відображення дерева
-  draw_tree(root)
+  draw_tree(root, "Візуалізація піраміди")
